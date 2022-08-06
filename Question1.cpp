@@ -3,12 +3,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void reverseArray(int arr[], int start, int end)
+void reverseArray(int arr[], int n)
 {
-    int temp;
-    while (start < end)
+    int start = 0;
+    int end = n - 1;
+    for (int i = 0; i < n / 2; i++)
     {
-        temp = arr[start];
+        int temp = arr[start];
         arr[start] = arr[end];
         arr[end] = temp;
         start++;
@@ -35,7 +36,7 @@ int main()
     {
         cin >> arr[i];
     }
-    reverseArray(arr, 0, n - 1);
+    reverseArray(arr, n);
     printArray(arr, n);
     return 0;
 }
